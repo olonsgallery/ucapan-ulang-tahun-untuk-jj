@@ -1,0 +1,406 @@
+body {
+  background-color: #ffd4e5;
+  font-family: "Quicksand", sans-serif;
+  margin: 0;
+
+  /* BARIS BARU: Memberikan ruang kosong di atas dan bawah layar */
+  padding: 30px 20px;
+  box-sizing: border-box; /* Memastikan padding tidak merusak tinggi layar */
+
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.btn-musik {
+  position: fixed;
+  bottom: 20px; /* Pindah ke bawah agar aman dari status bar/poni HP */
+  left: 20px; /* Pindah ke kiri agar tidak menutupi tanda tangan di kanan */
+
+  /* Efek Kaca Transparan (Glassmorphism) yang sangat modern */
+  background-color: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(
+    4px
+  ); /* Membuat background di belakang tombol agak buram estetik */
+
+  border: 1.5px solid #e91e63;
+  border-radius: 50%;
+
+  /* Ukuran diperkecil sedikit dari 45px menjadi 40px agar lebih ringkas */
+  width: 40px;
+  height: 40px;
+  font-size: 1rem;
+
+  cursor: pointer;
+  z-index: 10000; /* Memastikan tombol selalu berada di lapisan paling atas */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 12px rgba(233, 30, 99, 0.1);
+  transition:
+    transform 0.2s,
+    background-color 0.2s;
+}
+
+/* Kelas khusus yang akan memutar tombol saat musik menyala */
+.musik-berputar {
+  animation: putarIkon 3s linear infinite;
+}
+
+@keyframes putarIkon {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.container {
+  text-align: center;
+  background-color: #ffffff;
+
+  /* Padding dikurangi sedikit dari 40px 30px agar di layar HP tidak terlalu memakan tempat */
+  padding: 30px 20px;
+
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(233, 30, 99, 0.2);
+  max-width: 500px;
+  width: 90%;
+
+  /* BARIS BARU: Ini adalah cara paling aman untuk menengahkan konten secara vertikal di flexbox, sekaligus memungkinkannya untuk di-scroll dengan aman */
+  margin: auto;
+}
+
+.judul {
+  font-family: "Dancing Script", cursive;
+  font-size: 3rem;
+  color: #e91e63;
+  margin-bottom: 10px;
+}
+
+/* --- GAYA GARIS PEMBATAS ESTEK --- */
+.pembatas-estetik {
+  color: #ffb6c1; /* Warna pink pastel lembut untuk simbol di tengah */
+  font-size: 1rem;
+  margin: 15px auto 25px auto; /* Memberikan ruang napas yang pas antara judul dan sub-judul */
+  position: relative;
+  display: inline-block;
+  width: 50%; /* Mengatur seberapa panjang garis horizontalnya */
+}
+
+/* Membuat garis horizontal di sebelah kiri simbol */
+.pembatas-estetik::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 38%; /* Panjang garis kiri */
+  height: 1px;
+  background: linear-gradient(
+    to left,
+    #ffb6c1,
+    transparent
+  ); /* Garis memudar halus ke arah luar */
+}
+
+/* Membuat garis horizontal di sebelah kanan simbol */
+.pembatas-estetik::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 0;
+  width: 38%; /* Panjang garis kanan */
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    #ffb6c1,
+    transparent
+  ); /* Garis memudar halus ke arah luar */
+}
+
+/* --- GAYA TANGGAL SPESIAL --- */
+.tanggal-spesial {
+  font-size: 0.95rem;
+  color: #8e8e8e; /* Warna abu-abu lembut agar tidak balapan dengan warna judul */
+  letter-spacing: 3px; /* Memberikan jarak antar huruf agar terkesan eksklusif dan modern */
+  text-transform: uppercase; /* Membuat teks otomatis menjadi huruf kapital semua */
+  font-weight: 600;
+  margin-top: -10px; /* Menarik posisi tanggal agak ke atas agar pas di bawah garis pembatas */
+  margin-bottom: 25px; /* Memberikan jarak yang proporsional ke sub-judul di bawahnya */
+}
+
+.sub-judul {
+  color: #555;
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+}
+
+/* --- GAYA BINGKAI POLAROID MODERN (RASIO 3:4) --- */
+.frame-polaroid {
+  background-color: #ffffff;
+  padding: 15px 15px 60px 15px; /* Ruang bawah sedikit dilebarkan untuk teks */
+  border-radius: 12px;
+  box-shadow: 0 15px 35px rgba(233, 30, 99, 0.15);
+
+  /* Ukuran Total Bingkai */
+  width: 270px; /* Area foto 240px + Padding kiri 15px + Padding kanan 15px */
+  height: 395px; /* Area foto 320px + Padding atas 15px + Padding bawah 60px */
+  box-sizing: border-box; /* Memastikan padding tidak merusak ukuran total */
+
+  margin: 40px auto;
+  position: relative;
+  transform: rotate(-3deg);
+  animation: melayangLembut 3s infinite ease-in-out alternate;
+}
+
+/* Animasi bingkai melayang */
+@keyframes melayangLembut {
+  from {
+    transform: translateY(0px) rotate(-3deg);
+  }
+  to {
+    transform: translateY(-10px) rotate(-2deg);
+  }
+}
+
+.frame-polaroid img {
+  /* Area Foto Rasio 3:4 yang Presisi */
+  width: 240px;
+  height: 320px;
+
+  object-fit: cover; /* Mencegah foto gepeng/tertarik, otomatis memotong bagian lebih */
+  border-radius: 8px;
+
+  position: absolute;
+  top: 15px;
+  left: 15px;
+
+  transition:
+    opacity 1.2s ease,
+    filter 1.2s ease;
+}
+
+/* Teks kecil di bagian bawah bingkai polaroid */
+.teks-polaroid {
+  position: absolute;
+  bottom: 12px;
+  width: 100%;
+  left: 0;
+  text-align: center;
+  font-family: "Dancing Script", cursive; /* Menggunakan font judulmu */
+  font-size: 1.5rem;
+  color: #e91e63;
+}
+
+/* --- SETELAN TRANSISI GAMBAR --- */
+#fotoKecil {
+  z-index: 10;
+  /* Daripada hitam putih, kita gunakan efek blur (buram) seperti kaca */
+  filter: blur(4px);
+  opacity: 1;
+}
+
+.foto-hidden {
+  z-index: 9;
+  opacity: 0;
+  filter: blur(0px); /* Foto dewasa jelas dari awal (tapi tersembunyi) */
+}
+
+/* Mengganti nama agar bisa dipakai bergantian (loop) */
+.foto-aktif {
+  z-index: 12 !important; /* Ditinggikan sedikit agar selalu di atas foto kecil */
+  opacity: 1 !important;
+}
+
+.foto-pudar-kecil {
+  opacity: 0 !important;
+  filter: blur(8px) !important; /* Semakin buram saat menghilang */
+}
+
+/* Kelas baru untuk memperjelas foto seketika */
+.foto-jelas {
+  filter: blur(0px) !important;
+  /* Transisi filter dipercepat menjadi 0.3s agar langsung jelas */
+  transition: filter 0.3s ease !important;
+}
+
+.btn-kejutan {
+  background-color: #e91e63;
+  color: #ffffff;
+  border: none;
+  padding: 15px 35px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  border-radius: 50px;
+  cursor: pointer;
+
+  /* Hapus box-shadow yang lama, kita ganti dengan animasi */
+  transition:
+    transform 0.3s ease,
+    background-color 0.3s ease;
+
+  /* BARIS BARU: Memanggil animasi cahaya berdenyut */
+  animation: denyutGlow 2s infinite;
+}
+
+/* Animasi cahaya menyebar untuk tombol */
+@keyframes denyutGlow {
+  0% {
+    box-shadow: 0 0 0 0 rgba(233, 30, 99, 0.6);
+  }
+  70% {
+    /* Cahaya melebar sejauh 15px lalu memudar menjadi transparan */
+    box-shadow: 0 0 0 15px rgba(233, 30, 99, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(233, 30, 99, 0);
+  }
+}
+
+.btn-kejutan:hover {
+  transform: translateY(-5px);
+  background-color: #d81b60;
+  box-shadow: 0 10px 20px rgba(233, 30, 99, 0.4);
+}
+
+.btn-sukses {
+  background-color: #65b5e7 !important;
+  box-shadow: 0 5px 15px rgba(76, 120, 175, 0.3) !important;
+
+  /* BARIS BARU: Mematikan efek cahaya pink setelah diklik */
+  animation: none !important;
+}
+
+.pesan-box {
+  display: none;
+  margin-top: 30px;
+  padding: 20px;
+  background-color: #ffe4e1;
+  border-radius: 15px;
+  border: 2px dashed #e91e63;
+  animation: munculHalus 0.5s ease-out;
+  color: #1f1f1f;
+  line-height: 1.6;
+}
+
+/* --- GAYA Teks BISMILLAH ARAB --- */
+.bismillah {
+  text-align: center; /* Memastikan posisinya berada tepat di tengah */
+  font-size: 1.6rem; /* Ukuran agak besar agar detail harakat/tajwidnya jelas di HP */
+  color: #d81b60; /* Senada dengan warna judul pesan rahasia di bawahnya */
+  margin-top: 5px;
+  margin-bottom: 20px; /* Memberikan jarak yang pas sebelum masuk ke judul pesan */
+
+  /* PENTING UNTUK TEKS ARAB: Mengatur arah bacaan dari kanan ke kiri */
+  direction: rtl;
+
+  /* Menggunakan font serif standar bawaan HP agar lekukan kaligrafinya terlihat lebih luwes */
+  font-family: "Times New Roman", Georgia, serif;
+}
+
+.pesan-box h3 {
+  color: #d81b60;
+  margin-top: 0;
+}
+
+.emoji-list {
+  font-size: 1.5rem;
+}
+
+@keyframes munculHalus {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.pesan-box-aktif {
+  display: block !important;
+  animation: munculHalus 0.8s ease-out forwards;
+}
+
+.hati-efek {
+  position: fixed;
+  top: -20px;
+  font-size: 24px;
+  pointer-events: none;
+  z-index: 9999;
+  animation: jatuhEfek linear forwards;
+}
+
+@keyframes jatuhEfek {
+  to {
+    transform: translateY(105vh) rotate(360deg);
+  }
+}
+
+/* --- GAYA TEKS PENUTUP / TANDA TANGAN --- */
+.teks-penutup {
+  text-align: right; /* Menggeser teks ke sudut kanan bawah */
+  font-family: "Dancing Script", cursive; /* Menggunakan font tulisan tangan */
+  font-size: 1.6rem;
+  color: #e91e63;
+  margin-top: 25px; /* Memberi jarak yang cukup dari teks pesan di atasnya */
+  margin-bottom: 15px;
+  line-height: 1.3;
+}
+
+.teks-penutup span {
+  font-size: 1.8rem; /* Membuat nama "Syakir" sedikit lebih besar dan menonjol */
+  font-weight: bold;
+}
+
+/* --- PENYESUAIAN KHUSUS UNTUK LAYAR HP --- */
+@media screen and (max-width: 600px) {
+  .judul {
+    font-size: 2.2rem; /* Diperkecil agar tidak terlalu bertumpuk di HP */
+  }
+
+  .sub-judul {
+    font-size: 1rem; /* Sedikit diperkecil agar lebih proporsional */
+  }
+
+  .btn-kejutan {
+    padding: 12px 25px; /* Tombol disesuaikan agar tidak terlalu mendominasi layar */
+    font-size: 1rem;
+  }
+
+  .pesan-box {
+    display: none;
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #ffe4e1;
+    border-radius: 15px;
+    border: 2px dashed #e91e63;
+    animation: munculHalus 0.5s ease-out;
+    color: #1f1f1f;
+    line-height: 1.6;
+
+    /* BARIS BARU: Memaksa isi paragraf di dalam kotak menjadi rata kiri */
+    text-align: left;
+  }
+
+  .pesan-box h3 {
+    color: #d81b60;
+    margin-top: 0;
+
+    /* BARIS BARU: Memaksa khusus JUDUL PESAN saja yang tetap di tengah */
+    text-align: center;
+  }
+}
+
+@keyframes terbangKeAtas {
+  0% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-50px) scale(1.4); /* Terbang ke atas sambil membesar dan memudar */
+  }
+}
