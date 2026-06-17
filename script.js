@@ -92,25 +92,25 @@ function mulaiLoopFoto() {
 const tombolMusik = document.getElementById("tombolMusik");
 
 // Saat tombol kejutan pertama diklik, buat tombol musik ikut berputar
-tombolKejutan.addEventListener("click", function () {
-  // ... (kode motong kejutanmu yang lain) ...
-  tombolMusik.classList.add("musik-berputar");
-});
-
-// Logika klik tombol musik secara manual (bisa play/pause sendiri)
-tombolMusik.addEventListener(
+tombolKejutan.addEventListener(
   "click",
   function () {
-    if (musikUlangTahun.paused) {
-      musikUlangTahun.play();
-      tombolMusik.classList.add("musik-berputar");
-    } else {
-      musikUlangTahun.pause();
-      tombolMusik.classList.remove("musik-berputar");
-    }
+    // ... (kode motong kejutanmu yang lain) ...
+    tombolMusik.classList.add("musik-berputar");
   },
   { once: true },
 );
+
+// Logika klik tombol musik secara manual (bisa play/pause sendiri)
+tombolMusik.addEventListener("click", function () {
+  if (musikUlangTahun.paused) {
+    musikUlangTahun.play();
+    tombolMusik.classList.add("musik-berputar");
+  } else {
+    musikUlangTahun.pause();
+    tombolMusik.classList.remove("musik-berputar");
+  }
+});
 
 function buatHujanHati() {
   const pilihanEmoji = ["❤️", "💖", "✨", "🌸", "🦋"];
