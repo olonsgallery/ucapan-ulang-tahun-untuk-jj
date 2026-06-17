@@ -45,30 +45,34 @@ const daftarFotoDewasa = [
 // Variabel untuk melacak urutan foto ke berapa yang sedang tayang (Mulai dari 0)
 let indeksFotoSaatIni = 0;
 
-tombolKejutan.addEventListener("click", function () {
-  fotoKecil.classList.add("foto-jelas");
+tombolKejutan.addEventListener(
+  "click",
+  function () {
+    fotoKecil.classList.add("foto-jelas");
 
-  musikUlangTahun.play().catch(function (error) {
-    console.log("Musik diputar!");
-  });
+    musikUlangTahun.play().catch(function (error) {
+      console.log("Musik diputar!");
+    });
 
-  tombolKejutan.innerHTML = "Yeey! Selamat Ulang Tahun! 🎉";
-  tombolKejutan.classList.add("btn-sukses");
-  buatHujanHati();
+    tombolKejutan.innerHTML = "Yeey! Selamat Ulang Tahun! 🎉";
+    tombolKejutan.classList.add("btn-sukses");
+    buatHujanHati();
 
-  // Tunda transisi awal selama 1.5 detik
-  setTimeout(function () {
-    fotoKecil.classList.add("foto-pudar-kecil");
-    daftarFotoDewasa[indeksFotoSaatIni].classList.add("foto-aktif");
-    pesanRahasia.classList.add("pesan-box-aktif");
+    // Tunda transisi awal selama 1.5 detik
+    setTimeout(function () {
+      fotoKecil.classList.add("foto-pudar-kecil");
+      daftarFotoDewasa[indeksFotoSaatIni].classList.add("foto-aktif");
+      pesanRahasia.classList.add("pesan-box-aktif");
 
-    // BARIS BARU: Menggulir layar otomatis ke arah kotak pesan dengan mulus
-    pesanRahasia.scrollIntoView({ behavior: "smooth", block: "nearest" });
+      // BARIS BARU: Menggulir layar otomatis ke arah kotak pesan dengan mulus
+      pesanRahasia.scrollIntoView({ behavior: "smooth", block: "nearest" });
 
-    // Mulai loop otomatis
-    setTimeout(mulaiLoopFoto, 3000);
-  }, 1500);
-});
+      // Mulai loop otomatis
+      setTimeout(mulaiLoopFoto, 3000);
+    }, 1500);
+  },
+  { once: true },
+);
 
 // --- FUNGSI LOOP YANG BARU ---
 function mulaiLoopFoto() {
@@ -94,15 +98,19 @@ tombolKejutan.addEventListener("click", function () {
 });
 
 // Logika klik tombol musik secara manual (bisa play/pause sendiri)
-tombolMusik.addEventListener("click", function () {
-  if (musikUlangTahun.paused) {
-    musikUlangTahun.play();
-    tombolMusik.classList.add("musik-berputar");
-  } else {
-    musikUlangTahun.pause();
-    tombolMusik.classList.remove("musik-berputar");
-  }
-});
+tombolMusik.addEventListener(
+  "click",
+  function () {
+    if (musikUlangTahun.paused) {
+      musikUlangTahun.play();
+      tombolMusik.classList.add("musik-berputar");
+    } else {
+      musikUlangTahun.pause();
+      tombolMusik.classList.remove("musik-berputar");
+    }
+  },
+  { once: true },
+);
 
 function buatHujanHati() {
   const pilihanEmoji = ["❤️", "💖", "✨", "🌸", "🦋"];
