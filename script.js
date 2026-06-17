@@ -6,7 +6,7 @@ const pesanError = document.getElementById("pesanError");
 
 // GANTI TEKS DI BAWAH INI DENGAN PASSWORD RAHASIAMU
 // Gunakan huruf kecil semua agar lebih mudah divalidasi
-const sandiRahasia = "Jeje'16081995";
+const sandiRahasia = "jeje'16081995";
 
 btnPassword.addEventListener("click", function () {
   const tebakan = inputPassword.value.toLowerCase().trim();
