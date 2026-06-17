@@ -69,7 +69,7 @@ tombolKejutan.addEventListener(
 
       // Mulai loop otomatis
       setTimeout(mulaiLoopFoto, 3000);
-    }, 1500);
+    }, 5300);
   },
   { once: true },
 );
