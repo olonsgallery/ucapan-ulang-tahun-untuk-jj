@@ -1,3 +1,34 @@
+// --- FITUR PASSWORD ---
+const layarPassword = document.getElementById("layarPassword");
+const inputPassword = document.getElementById("inputPassword");
+const btnPassword = document.getElementById("btnPassword");
+const pesanError = document.getElementById("pesanError");
+
+// GANTI TEKS DI BAWAH INI DENGAN PASSWORD RAHASIAMU
+// Gunakan huruf kecil semua agar lebih mudah divalidasi
+const sandiRahasia = "jeje'16081995";
+
+btnPassword.addEventListener("click", function () {
+  const tebakan = inputPassword.value.toLowerCase().trim();
+
+  if (tebakan === sandiRahasia) {
+    // Jika benar, hilangkan layarnya dengan animasi
+    layarPassword.style.opacity = "0";
+    setTimeout(() => {
+      layarPassword.style.display = "none";
+    }, 500); // Menunggu animasi memudar selesai (0.5 detik)
+  } else {
+    // Jika salah, tampilkan pesan error yang lucu
+    pesanError.innerText = "Sandi salah! 😜 Coba lagi.";
+    inputPassword.value = ""; // Mengosongkan kolom input
+
+    // Hilangkan pesan error setelah 3 detik
+    setTimeout(() => {
+      pesanError.innerText = "";
+    }, 3000);
+  }
+});
+
 const tombolKejutan = document.getElementById("tombolKejutan");
 const pesanRahasia = document.getElementById("pesanRahasia");
 const musikUlangTahun = document.getElementById("musikUlangTahun");
