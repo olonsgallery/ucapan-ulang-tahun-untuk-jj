@@ -1,3 +1,9 @@
+html,
+body {
+  /* BARIS BARU: Senjata rahasia mencegah layar bergeser ke samping */
+  overflow-x: hidden;
+}
+
 body {
   background-color: #ffd4e5;
   font-family: "Quicksand", sans-serif;
@@ -410,8 +416,8 @@ body {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   background-color: #ffd4e5;
   z-index: 999999; /* Memastikan layar ini menutupi semua elemen lain */
   display: flex;
