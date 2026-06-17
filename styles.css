@@ -292,17 +292,17 @@ body {
 
 /* --- GAYA Teks BISMILLAH ARAB --- */
 .bismillah {
-  text-align: center; /* Memastikan posisinya berada tepat di tengah */
-  font-size: 1.6rem; /* Ukuran agak besar agar detail harakat/tajwidnya jelas di HP */
-  color: #d81b60; /* Senada dengan warna judul pesan rahasia di bawahnya */
+  text-align: center;
+  font-size: 1.8rem; /* Sedikit diperbesar karena font Amiri sangat elegan */
+  color: #d81b60;
   margin-top: 5px;
-  margin-bottom: 20px; /* Memberikan jarak yang pas sebelum masuk ke judul pesan */
+  margin-bottom: 20px;
 
-  /* PENTING UNTUK TEKS ARAB: Mengatur arah bacaan dari kanan ke kiri */
-  direction: rtl;
+  /* Menggunakan font kaligrafi asli Arab */
+  font-family: "Noto Naskh Arabic", serif;
 
-  /* Menggunakan font serif standar bawaan HP agar lekukan kaligrafinya terlihat lebih luwes */
-  font-family: "Times New Roman", Georgia, serif;
+  /* PENTING UNTUK HP: Memberikan ruang napas agar harakat tidak terpotong layar */
+  line-height: 1.8;
 }
 
 .pesan-box h3 {
