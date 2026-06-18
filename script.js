@@ -54,7 +54,7 @@ tombolKejutan.addEventListener(
       console.log("Musik diputar!");
     });
 
-    tombolKejutan.innerHTML = "Yeey! Selamat Ulang Tahun! 🎉";
+    tombolKejutan.innerHTML = "Yeey... Selamat Ulang Tahun 🎉";
     tombolKejutan.classList.add("btn-sukses");
     buatHujanHati();
 

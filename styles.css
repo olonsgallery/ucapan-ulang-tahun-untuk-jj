@@ -232,6 +232,9 @@ body {
 }
 
 .btn-kejutan {
+  font-family: "Quicksand", sans-serif;
+  font-weight: bold;
+  font-size: 1.1rem;
   background-color: #f15186;
   color: #ffffff;
   border: none;
