@@ -185,6 +185,8 @@ body {
   transition:
     opacity 1.2s ease,
     filter 1.2s ease;
+
+  border-radius: 8px;
 }
 
 /* Teks kecil di bagian bawah bingkai polaroid */
@@ -353,7 +355,7 @@ body {
   text-align: right; /* Menggeser teks ke sudut kanan bawah */
   font-family: "Dancing Script", cursive; /* Menggunakan font tulisan tangan */
   font-size: 1.6rem;
-  color: #8e1313;
+  color: #780c25;
   margin-top: 25px; /* Memberi jarak yang cukup dari teks pesan di atasnya */
   margin-bottom: 15px;
   line-height: 1.3;
