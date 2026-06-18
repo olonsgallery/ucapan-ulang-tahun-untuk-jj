@@ -282,7 +282,7 @@ body {
   display: none;
   margin-top: 30px;
   padding: 20px;
-  background-color: #ffffff;
+  background-color: #ffff;
   border-radius: 15px;
   border: 2px dashed #d9caba;
   animation: munculHalus 0.5s ease-out;
@@ -380,11 +380,20 @@ body {
     display: none;
     margin-top: 30px;
     padding: 20px;
-    background-color: #ffe4e1;
+
+    /* DIUBAH: Menjadi putih bersih agar terlihat kontras dan 'pop-out' di atas latar belakang ivory */
+    background-color: #ffffff;
+
     border-radius: 15px;
-    border: 2px dashed #b98b5b;
+
+    /* DIUBAH: Warna cokelat/beige yang lebih lembut agar garis putus-putusnya terlihat estetik, tidak terlalu kontras */
+    border: 2px dashed #d9caba;
+
     animation: munculHalus 0.5s ease-out;
-    color: #1f1f1f;
+
+    /* DIUBAH: Menggunakan warna cokelat keabu-abuan gelap (warm charcoal) agar teks suratnya terasa hangat, lembut, dan premium saat dibaca */
+    color: #5c5346;
+
     line-height: 1.6;
 
     /* BARIS BARU: Memaksa isi paragraf di dalam kotak menjadi rata kiri */
@@ -392,7 +401,7 @@ body {
   }
 
   .pesan-box h3 {
-    color: #d81b60;
+    color: #4a4238;
     margin-top: 0;
 
     /* BARIS BARU: Memaksa khusus JUDUL PESAN saja yang tetap di tengah */
