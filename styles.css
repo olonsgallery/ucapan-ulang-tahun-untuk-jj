@@ -5,7 +5,7 @@ body {
 }
 
 body {
-  background-color: #ffd4e5;
+  background-color: #faf7f2;
   font-family: "Quicksand", sans-serif;
   margin: 0;
 
@@ -29,7 +29,7 @@ body {
     4px
   ); /* Membuat background di belakang tombol agak buram estetik */
 
-  border: 1.5px solid #e91e63;
+  border: 1.5px solid #f49ebb;
   border-radius: 50%;
 
   /* Ukuran diperkecil sedikit dari 45px menjadi 40px agar lebih ringkas */
@@ -42,7 +42,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  box-shadow: 0 4px 12px rgba(233, 30, 99, 0.1);
+  box-shadow: 0 4px 12px rgba(105, 90, 46, 0.1);
   transition:
     transform 0.2s,
     background-color 0.2s;
@@ -70,7 +70,7 @@ body {
   padding: 30px 20px;
 
   border-radius: 20px;
-  box-shadow: 0 10px 25px rgba(233, 30, 99, 0.2);
+  box-shadow: 0 10px 30px rgba(74, 66, 56, 0.1);
   max-width: 500px;
   width: 90%;
 
@@ -81,13 +81,13 @@ body {
 .judul {
   font-family: "Dancing Script", cursive;
   font-size: 3rem;
-  color: #e91e63;
+  color: #4a4238;
   margin-bottom: 10px;
 }
 
 /* --- GAYA GARIS PEMBATAS ESTEK --- */
 .pembatas-estetik {
-  color: #ffb6c1; /* Warna pink pastel lembut untuk simbol di tengah */
+  color: #d9caba; /* Warna pink pastel lembut untuk simbol di tengah */
   font-size: 1rem;
   margin: 15px auto 25px auto; /* Memberikan ruang napas yang pas antara judul dan sub-judul */
   position: relative;
@@ -105,7 +105,7 @@ body {
   height: 1px;
   background: linear-gradient(
     to left,
-    #ffb6c1,
+    #d9caba,
     transparent
   ); /* Garis memudar halus ke arah luar */
 }
@@ -120,7 +120,7 @@ body {
   height: 1px;
   background: linear-gradient(
     to right,
-    #ffb6c1,
+    #d9caba,
     transparent
   ); /* Garis memudar halus ke arah luar */
 }
@@ -147,7 +147,7 @@ body {
   background-color: #ffffff;
   padding: 15px 15px 60px 15px; /* Ruang bawah sedikit dilebarkan untuk teks */
   border-radius: 12px;
-  box-shadow: 0 15px 35px rgba(233, 30, 99, 0.15);
+  box-shadow: 0 8px 20px rgba(74, 66, 56, 0.15);
 
   /* Ukuran Total Bingkai */
   width: 270px; /* Area foto 240px + Padding kiri 15px + Padding kanan 15px */
@@ -196,7 +196,7 @@ body {
   text-align: center;
   font-family: "Dancing Script", cursive; /* Menggunakan font judulmu */
   font-size: 1.5rem;
-  color: #e91e63;
+  color: #4a4238;
 }
 
 /* --- SETELAN TRANSISI GAMBAR --- */
@@ -232,7 +232,7 @@ body {
 }
 
 .btn-kejutan {
-  background-color: #e91e63;
+  background-color: #f15186;
   color: #ffffff;
   border: none;
   padding: 15px 35px;
@@ -253,7 +253,7 @@ body {
 /* Animasi cahaya menyebar untuk tombol */
 @keyframes denyutGlow {
   0% {
-    box-shadow: 0 0 0 0 rgba(233, 30, 99, 0.6);
+    box-shadow: 0 0 0 0 rgba(143, 136, 58, 0.6);
   }
   70% {
     /* Cahaya melebar sejauh 15px lalu memudar menjadi transparan */
@@ -282,11 +282,11 @@ body {
   display: none;
   margin-top: 30px;
   padding: 20px;
-  background-color: #ffe4e1;
+  background-color: #ffffff;
   border-radius: 15px;
-  border: 2px dashed #e91e63;
+  border: 2px dashed #d9caba;
   animation: munculHalus 0.5s ease-out;
-  color: #1f1f1f;
+  color: #5c5346;
   line-height: 1.6;
 }
 
@@ -294,7 +294,7 @@ body {
 .bismillah {
   text-align: center;
   font-size: 1.8rem; /* Sedikit diperbesar karena font Amiri sangat elegan */
-  color: #d81b60;
+  color: #4a4238;
   margin-top: 5px;
   margin-bottom: 20px;
 
@@ -306,7 +306,7 @@ body {
 }
 
 .pesan-box h3 {
-  color: #d81b60;
+  color: #4a4238;
   margin-top: 0;
 }
 
@@ -382,7 +382,7 @@ body {
     padding: 20px;
     background-color: #ffe4e1;
     border-radius: 15px;
-    border: 2px dashed #e91e63;
+    border: 2px dashed #b98b5b;
     animation: munculHalus 0.5s ease-out;
     color: #1f1f1f;
     line-height: 1.6;
@@ -418,7 +418,7 @@ body {
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-color: #ffd4e5;
+  background-color: #faf7f2;
   z-index: 999999; /* Memastikan layar ini menutupi semua elemen lain */
   display: flex;
   justify-content: center;
@@ -433,11 +433,11 @@ body {
   text-align: center;
   width: 85%;
   max-width: 400px;
-  box-shadow: 0 10px 30px rgba(233, 30, 99, 0.2);
+  box-shadow: 0 10px 30px rgba(74, 66, 56, 0.15);
 }
 
 .box-password h2 {
-  color: #e91e63;
+  color: #4a4238;
   font-family: "Dancing Script", cursive;
   font-size: 2.2rem;
   margin-top: 0;
@@ -456,7 +456,7 @@ body {
 }
 
 #inputPassword:focus {
-  border-color: #e91e63;
+  border-color: #f85e91;
 }
 
 .pesan-error {
